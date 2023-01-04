@@ -24,12 +24,11 @@ const ChangeColor = () => {
    /* let red = numbRandom();
    let blue = numbRandom();
    let green = numbRandom(); */
-   const newColor = (red, green, blue) => {
+   /* const newColor = (red, green, blue) => {
       return (
          `rgb(${red},${green},${blue})`
       )
    }
-
    const genRGB = () => {
       const rgb = {
          red: numbRandom(),
@@ -37,12 +36,21 @@ const ChangeColor = () => {
          blue: numbRandom(),
       }
       return setColor(newColor(rgb.red, rgb.green, rgb.blue))
+   } */
+
+   const tryRGB = () => {
+      const rgb = {
+         red: numbRandom(),
+         green: numbRandom(),
+         blue: numbRandom(),
+      }
+      return setColor(`rgb(${rgb.red},${rgb.green},${rgb.blue})`)
    }
 
    const changeColor = () => {
       return setStart(
          setInterval(() => {
-            genRGB()
+            tryRGB()
          }, 1000))
    }
 
@@ -58,7 +66,7 @@ const ChangeColor = () => {
          onMouseOver={changeColor} //mouse sobre el span => inicia la cuenta
          onMouseLeave={stopOutSquare} //mouse fuera del span => para el cambio de color
          onDoubleClick={stopDoubleClick} //doble click => para el cambio de color
-         style={{ width: '255px', height: '255px', backgroundColor: color, boxShadow: '4px 4px 4px rgba(0,0,0,0.5)' }}
+         style={{ width: '255px', height: '255px', backgroundColor: color, boxShadow: '4px 4px 4px rgba(0,0,0,0.5)', borderRadius: '2px' }}
       >
 
          {/* {color} */}
